@@ -154,8 +154,8 @@ private:
     OMX_HANDLETYPE mHandle;
     sp<IOMXObserver> mObserver;
     bool mDying;
-#ifndef METADATA_CAMERA_SOURCE
     bool mSailed;  // configuration is set (no more meta-mode changes)
+#ifndef METADATA_CAMERA_SOURCE
     bool mQueriedProhibitedExtensions;
     SortedVector<OMX_INDEXTYPE> mProhibitedExtensions;
 #endif
