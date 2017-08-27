@@ -25,7 +25,7 @@
 #include <algorithm>
 
 #include <android/hardware/ICamera.h>
-
+#include <MetadataBufferType.h>
 #include <binder/IPCThreadState.h>
 #include <binder/IServiceManager.h>
 
