@@ -37,7 +37,8 @@ bool IOProfile::isCompatibleProfile(audio_devices_t device,
                                     audio_channel_mask_t *updatedChannelMask,
                                     // FIXME type punning here
                                     uint32_t flags,
-                                    bool exactMatchRequiredForInputFlags) const
+                                    bool exactMatchRequiredForInputFlags,
+                                    bool checkExactFormat) const
 {
     const bool isPlaybackThread =
             getType() == AUDIO_PORT_TYPE_MIX && getRole() == AUDIO_PORT_ROLE_SOURCE;
@@ -69,7 +70,7 @@ bool IOProfile::isCompatibleProfile(audio_devices_t device,
     if (isRecordThread)
     {
         if (checkCompatibleAudioProfile(
-                myUpdatedSamplingRate, myUpdatedChannelMask, myUpdatedFormat) != NO_ERROR) {
+                myUpdatedSamplingRate, myUpdatedChannelMask, myUpdatedFormat, checkExactFormat) != NO_ERROR) {
             return false;
         }
     } else {

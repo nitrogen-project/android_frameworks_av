@@ -190,6 +190,10 @@ cc_library_shared {
         "libFLAC",
     ],
 
+    whole_static_libs: [
+        "libavextensions"
+    ],
+
     export_shared_lib_headers: [
         "libmedia",
         "android.hidl.allocator@1.0",
