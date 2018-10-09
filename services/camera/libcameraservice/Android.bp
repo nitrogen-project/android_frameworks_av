@@ -37,6 +37,9 @@ license {
 
 cc_library_shared {
     name: "libcameraservice",
+    defaults: [
+        "needs_camera_boottime_defaults",
+    ],
 
     // Camera service source
 
@@ -188,5 +191,4 @@ cc_library_shared {
         "-Werror",
         "-Wno-ignored-qualifiers",
     ],
-
 }
