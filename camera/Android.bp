@@ -74,6 +74,13 @@ cc_library_shared {
         "-Wextra",
     ],
 
+    product_variables: {
+        nitrogen: {
+            needs_camera_boottime_timestamp: {
+                cflags: ["-DTARGET_CAMERA_BOOTTIME_TIMESTAMP"],
+            },
+        },
+    },
 }
 
 // AIDL interface between camera clients and the camera service.
